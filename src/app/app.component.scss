@@ -23,7 +23,7 @@
   // margin: auto;
   flex: 0 0 auto;
   transition: 1.5s all ease;
-
+  z-index: 2;
 }
 
 /* Hide the images by default */
@@ -106,9 +106,18 @@
 /* Fading animation */
 .custom-fade {
   -webkit-animation-name: myfade;
-  -webkit-animation-duration: 0.6s;
+  -webkit-animation-duration: 1.6s;
   animation-name: myfade;
-  animation-duration: 0.6s;
+  animation-duration: 1s;
+}
+
+@keyframes myfade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes myfade {
@@ -119,6 +128,7 @@
     opacity: 1;
   }
 }
+
 
 
 header > section > div > div.col-10.p-0 > div > button{
@@ -132,4 +142,43 @@ header > section > div > div.col-10.p-0 > div > div.position-absolute{
 
 header > section > div.row{
   height: 100vh;
+}
+
+
+.img-fluid.rounded.waves{
+  height: 320px;
+}
+
+header > section > div > div.col-10.p-0 > div > div.overflow-hidden{
+  margin-left: 160px;
+}
+
+.card-title{
+  position: absolute;
+  left: -10px;
+  height: 116px;
+  bottom: 262px;
+  z-index: 2;
+}
+
+.card-title > p {
+  font-size: 5rem;
+}
+
+.display-1{
+  font-weight: 500 !important;
+}
+
+.card-title > div, .card-no > div{
+  transition: 1.5s all ease;
+}
+
+.card-no{
+  position: absolute;
+  left: 38px;
+  top: 110px;
+  z-index: 1;
+  height: 120px;
+  border: 1px solid black;
+  background-color: black;
 }
