@@ -6,21 +6,8 @@
   );
 }
 
-//    .btn.btn-margin {
-//     margin-left: 6rem;
-//     margin-top: 3rem;
-//   }
-//   .btn.btn-lily {
-//     background: linear-gradient(40deg, rgba(0,51,199,.7), rgba(209,149,249,.7));
-//   }
-
 /* Slideshow container */
 .slideshow-container {
-  // max-width: 1000px;
-  // border: 1px solid rgb(255, 0, 0);
-  // position: relative;
-  // height: 320px;
-  // margin: auto;
   flex: 0 0 auto;
   transition: 1.5s all ease;
   z-index: 2;
@@ -29,9 +16,7 @@
 /* Hide the images by default */
 .mySlides {
   margin-right: 3em;
-  // display: none;
   flex: 0 0 560px;
-  // height: 320px;
 }
 
 /* Next & previous buttons */
