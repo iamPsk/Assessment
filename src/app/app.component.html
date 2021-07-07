@@ -6,14 +6,15 @@
   <!--/.Navbar-->
 
   <!-- Intro -->
-  <section class="view">
+  <section class="view"
+    style="background-image: url('../assets/images/pexels-gradienta-7130555.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
     <div class="row flex-nowrap m-0">
 
-      <div class="col-2 p-0 bg-danger">
-
+      <div class="col-2 p-0">
+        <!-- social -->
         <div class="d-flex justify-content-end align-items-end h-100">
-          <ul class="nav flex-column lighten-4 py-4">
+          <ul class="nav flex-column darken-4 py-4">
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <mdb-icon fab icon="pinterest-p"></mdb-icon>
@@ -35,58 +36,246 @@
               </a>
             </li>
           </ul>
-
         </div>
-
+        <!-- social -->
       </div>
 
-      <div class="col-10 p-0 bg-dark">
-        <div class="view d-flex h-100 align-items-center position-relative">
-          <button class="btn btn-primary align-self-end">View more</button>
-          <div class="overflow-hidden">
-            <div class="slideshow-container position-relative d-flex justify-content-between">
+      <div class="col-10 p-0">
+        <div class="view d-flex h-100 align-items-center ml-5 position-relative">
+          <div class="d-flex">
 
-              <!-- Full-width images with number and caption text -->
-              <div class="mySlides custom-fade shadow" *ngFor="let card of cards">
-                <!-- <div class="numbertext">1 / 3</div> -->
-                <img class="img-fluid rounded waves" src="{{ card.src }}" style="width:100%">
-                <!-- <div class="text">Caption Text</div> -->
+            <button style="z-index: 1;" class="btn btn-danger rounded align-self-end mr-lg-3" mdbWavesEffect>View  more</button>
+
+            <!-- <a mdbBtn color="success" mdbWavesEffect>view more</a> -->
+
+            <div class="overflow-hidden">
+              <!-- slide img -->
+              <div class="slideshow-container p-3 position-relative d-flex justify-content-between">
+
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides shadow" *ngFor="let slide of slides">
+                  <!-- <div class="numbertext">1 / 3</div> -->
+                  <img class="img-fluid rounded waves z-depth-1" src="{{ slide.img }}" style="width:100%">
+                  <!-- <div class="text">Caption Text</div> -->
+                </div>
+
+
               </div>
-
-              <!-- <div class="mask flex-center hm-gradient"></div> -->
-
+              <!-- slide img -->
             </div>
+            <br>
           </div>
-          <br>
 
           <!-- The dots/circles -->
-          <div style="text-align:center" class="position-absolute">
+          <div style="text-align:center; z-index: 1;" class="position-absolute">
             <span class="dot active" (click)="nextSlide(0)"></span>
             <span class="dot" (click)="nextSlide(1)"></span>
             <span class="dot" (click)="nextSlide(2)"></span>
             <span class="dot" (click)="nextSlide(3)"></span>
             <span class="dot" (click)="nextSlide(4)"></span>
           </div>
+          <!-- The dots/circles -->
 
+          <!-- slide title -->
           <div class="card-title text-center overflow-hidden">
             <div class="position-relative custom-fade">
-              <p class="display-1 font-weight-bold text-white" *ngFor="let card of cards">{{ card.title }}</p>
+              <h1 class="display-4 font-weight-bold text-dark" *ngFor="let slide of slides">{{ slide.title }}</h1>
             </div>
           </div>
-          <div class="card-no overflow-hidden text-center rounded shadow">
+          <!-- slide title -->
+
+          <!-- slide no. -->
+          <div class="card-no overflow-hidden text-center rounded ">
             <div class="position-relative custom-fade">
-              <p class="display-1 font-weight-bold text-white" *ngFor="let card of cards">{{ card.no }}</p>
+              <p class="display-1 font-weight-bold p-3 text-light accent-2" *ngFor="let slide of slides; index as i">0{{ i + 1}}</p>
             </div>
           </div>
+          <!-- slide no. -->
         </div>
       </div>
 
     </div>
+    <!-- <div class="mask flex-center deep-blue-gradient"></div> -->
 
   </section>
   <!-- Intro -->
 
 </header>
 <!-- Main navigation -->
+<!-- <div class="container-fluid mb-5">
+  <div class="row"
+    style="height:131px; background-image: url('../assets/images/Publication1.png'); background-repeat: no-repeat; background-size: cover; background-position: center bottom;">
+  </div>
+</div> -->
 
-<!-- <div style="height: 150vh"></div> -->
+<div class="container mb-5 pt-5">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-12">
+      <h2 class="mb-4 pb-2 d-inline-block">About Me</h2>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-5">
+
+      <!-- Featured image -->
+      <!-- <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect> -->
+      <img class="img-fluid rounded z-depth-2 waves-light" src="../assets/images/myimage.jpg" alt="Sample image"
+        mdbWavesEffect>
+      <!-- <a>
+              <div class="mask rgba-white-slight"></div>
+            </a> -->
+      <!-- </div> -->
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-7">
+
+      <h3 class="mb-3">I specialize in translating user and business needs into responsive
+        front end code</h3>
+
+      <p class="lead">Donec luctus rhoncus dignissim. Integer blandit mattis arcu, id viverra orci condimentum a.
+        Quisque nibh tortor, mollis placerat semper ac, auctor quis mauris. Praesent dignissim sed magna eu urna
+        consectetur, at pretium nisi aliquet. Sed vestibulum malesuada semper. Init Interdum et malesuada fames ac ante
+        ipsum primis in faucibus. Donec malesuada nibh sed dolorinet libero posuere, sed cursus elit congue. Sed
+        vestibulum malesuada semper. Init Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada
+        nibh sed dolorinet libero posuere, sed cursus elit congue donec malesuada nibhe</p>
+
+      <!-- Read more button -->
+      <!-- <a mdbBtn color="success" mdbWavesEffect>view my work</a> -->
+
+    </div>
+    <!-- Grid column -->
+
+
+
+  </div>
+
+</div>
+
+<!--Section: Services-->
+<section class="container-fluid text-white para mask">
+
+  <!--Grid row-->
+  <div class="row ">
+    <div class="col-12 ">
+      <!--Section heading-->
+      <h2 class="h2 pt-5 pb-3 font-weight-bold text-center">I'm available for hire & freelance projects</h2>
+      <!--Section description-->
+      <p class="px-5 mb-4 pb-2 lead text-center">Lets Work together indeed!.</p>
+    </div>
+  </div>
+  <!--Grid row-->
+
+  <!--Grid row-->
+  <div class="row text-center mb-4">
+
+    <!--Grid column-->
+    <div class="col px-5">
+
+      <a mdbBtn color="pink" class="waves-light" rounded mdbWavesEffect>
+        <mdb-icon far icon="clone" class="left"></mdb-icon>
+        Hire me
+      </a>
+      <a mdbBtn color="blue" class="waves-light" rounded mdbWavesEffect>
+        <mdb-icon far icon="clone" class="left"></mdb-icon>
+        Get Qoutes
+      </a>
+
+    </div>
+    <!--Grid column-->
+  </div>
+  <!--Grid row-->
+
+  <div class="card-deck white black-text p-5">
+    <div class="col-12">
+      <h2 class="mb-4 pb-2 d-inline-block">Offerd Services</h2>
+    </div>
+
+    <mdb-card *ngFor="let card of cards; index as i" class="mb-3 mx-2" [hidden]="i > 2">
+      <mdb-card-header class="border-0 pb-0 bg-transparent">
+        <mdb-icon fas icon="{{ card.icon }}"></mdb-icon>
+      </mdb-card-header>
+      <mdb-card-body class="pt-3">
+        <mdb-card-title>
+          <h5 class="mb-3">{{ card.title }}</h5>
+        </mdb-card-title>
+        <mdb-card-text>{{ card.description }}</mdb-card-text>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-md-6 grey" style="background-image: url('../assets/images/WakeInternalMedicine-ResponsiveScreens-e1593623160290.png'); background-repeat: no-repeat; background-size: contain; background-position: center center;">
+      <!-- <img class="img-fluid" src="../assets/images/WakeInternalMedicine-ResponsiveScreens-e1593623160290.png" alt=""> -->
+      <!-- <div class="mask rgba-black-strong"></div> -->
+    </div>
+    <!-- Grid column -->
+    <div class="col-md-6 d-flex flex-wrap py-5">
+
+      <!-- Nested Grid column -->
+      <div class="col-sm-6 mb-3 p-0" *ngFor="let card of cards; index as i" [hidden]="i < 3">
+        <mdb-card class="bg-transparent z-depth-0" >
+          <mdb-card-header class="border-0 pb-0 bg-transparent">
+            <mdb-icon fas icon="{{ card.icon }}"></mdb-icon>
+          </mdb-card-header>
+          <mdb-card-body class="pt-3">
+            <mdb-card-title>
+              <h5 class="mb-3">{{ card.title }}</h5>
+            </mdb-card-title>
+            <mdb-card-text>{{ card.description }}</mdb-card-text>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+      <!-- Nested Grid column -->
+
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!--/Section: Services-->
+
+<!--Projects section v.4-->
+<section class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="mb-4 pb-2 d-inline-block">Projects</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex justify-content-center align-items-center">
+      <p class="text-center">Experts In Field</p>
+      <ul>
+        <li><a href="http://slowcode.co.">Slowcode</a></li>
+        <li></li>
+        <li><a href="http://slowcode.co.">Slowcode</a></li>
+        <li></li>
+
+        <ul>
+          <li></li>
+          <li><a href="http://slowcode.co.">Slowcode</a></li>
+          <li></li>
+          <li><a href="http://slowcode.co.">Slowcode</a></li>
+        </ul>
+
+      </ul>
+
+    </div>
+  </div>
+</section>
+<!--Projects section v.4-->
+
+<app-footer></app-footer>
