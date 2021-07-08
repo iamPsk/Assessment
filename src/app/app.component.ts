@@ -11,29 +11,30 @@ export class AppComponent implements OnInit {
   title = 'profile';
   slideIndex = 1;
   slideWidth: number = 608;
-  titleHeight: number = 75;
+  titleHeight: number = 78;
   cardNo: number = 165;
 
   slides: Array<Slide> = [
     {
       img: '../assets/images/1.jpg',
-      title: 'Mobile First Responsive Design'
+      title: 'Mobile Web development'
     },
     {
       img: '../assets/images/2.jpg',
-      title: 'Progressive Web Apps'
+      title: 'Server-side scripting'
     },
     {
       img: '../assets/images/3.jpg',
-      title: 'Client/ Server-side scripting'
+      title: 'Progressive Web Apps'
     },
     {
       img: '../assets/images/1.jpg',
-      title: 'Front-end Web development'
+      title: 'Web Content'
     },
     {
-      img: '../assets/images/4.jpg',
-      title: ' Agile methodologies'
+      img: '../assets/images/WakeInternalMedicine-ResponsiveScreens-e1593623160290.png',
+      title: 'Mobile First Responsive Design'
+      
     },
   ]
 
@@ -104,15 +105,16 @@ export class AppComponent implements OnInit {
 
 
   nextSlide(n) {
+    // document.querySelector("body > app-root > header > section > div > div.col-10.p-0 > div > div.d-flex.position-relative > div.slide-title.text-center.overflow-hidden > div")
     let dots: HTMLCollection = document.getElementsByClassName('dot');
     let slideContainer: HTMLDivElement = document.querySelector('.slideshow-container');
-    let cardTitle: HTMLDivElement = document.querySelector("div.card-title.text-center.overflow-hidden > div")
+    let slideTitle: HTMLDivElement = document.querySelector(".slide-title.overflow-hidden > div")
     let cardNo: HTMLDivElement = document.querySelector("div.card-no.text-center.overflow-hidden.rounded > div")
 
     this.slideIndex = n
 
     slideContainer.style.left = `-${this.slideWidth * this.slideIndex}px`
-    cardTitle.style.bottom = `${this.titleHeight * this.slideIndex}px`
+    slideTitle.style.bottom = `${this.titleHeight * this.slideIndex}px`
     cardNo.style.bottom = `${this.cardNo * this.slideIndex}px`
 
 
