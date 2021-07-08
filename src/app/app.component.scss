@@ -16,25 +16,56 @@
 .mySlides {
   margin-right: 3em;
   flex: 0 0 560px;
-  position:relative;
-  display:inline-block;
+  position: relative;
+  display: inline-block;
 }
 
-.mySlides::after{
-  content:'';
-  position:absolute;
-  left:0; top:0;
-  width:100%; height:100%;
-  display:inline-block;
-  background-image: linear-gradient(120deg, rgba(224, 195, 252, 0.5) 0%, rgba(142, 197, 252, 0.5) 100%);
-  background: -moz-linear-gradient(top, rgba(224, 195, 252, 0.5) 0%, rgba(142, 197, 252, 0.5) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224, 195, 252, 0.5)),
-  color-stop(100%,rgba(142, 197, 252, 0.5))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(142, 197, 252, 0.5) 0%,rgba(224, 195, 252, 0.5) 100%); /*
+.mySlides::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-image: linear-gradient(
+    120deg,
+    rgba(224, 195, 252, 0.5) 0%,
+    rgba(142, 197, 252, 0.5) 100%
+  );
+  background: -moz-linear-gradient(
+    top,
+    rgba(224, 195, 252, 0.5) 0%,
+    rgba(142, 197, 252, 0.5) 100%
+  ); /* FF3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(224, 195, 252, 0.5)),
+    color-stop(100%, rgba(142, 197, 252, 0.5))
+  ); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(142, 197, 252, 0.5) 0%,
+    rgba(224, 195, 252, 0.5) 100%
+  ); /*
   Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(142, 197, 252, 0.5) 0%,rgba(224, 195, 252, 0.5) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(142, 197, 252, 0.5) 0%,rgba(224, 195, 252, 0.5) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(142, 197, 252, 0.5) 0%,rgba(224, 195, 252, 0.5) 100%); /* W3C */
+  background: -o-linear-gradient(
+    top,
+    rgba(142, 197, 252, 0.5) 0%,
+    rgba(224, 195, 252, 0.5) 100%
+  ); /* Opera 11.10+ */
+  background: -ms-linear-gradient(
+    top,
+    rgba(142, 197, 252, 0.5) 0%,
+    rgba(224, 195, 252, 0.5) 100%
+  ); /* IE10+ */
+  background: linear-gradient(
+    to bottom,
+    rgba(142, 197, 252, 0.5) 0%,
+    rgba(224, 195, 252, 0.5) 100%
+  ); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ec5fc',
   endColorstr='#e0c3fc',GradientType=0 ); /* IE6-9 */
 }
@@ -60,6 +91,12 @@
 }
 
 /* The dots/bullets/indicators */
+.dots {
+  left: 0;
+  bottom: -5px;
+  transform: translate(50%);
+}
+
 .dot {
   cursor: pointer;
   height: 1.6px;
@@ -77,10 +114,10 @@
   background-color: var(--white);
 }
 
-
-
 /* Fading animation */
 .custom-fade {
+  transition: all 1.5s ease;
+  -webkit-transition: all 1.5s ease;
   -webkit-animation-name: myfade;
   -webkit-animation-duration: 0.6s;
   animation-name: myfade;
@@ -105,10 +142,7 @@
   }
 }
 
-
-
-
-header > section > div > div.col-10.p-0 > div > div.d-flex > button{
+button.btn.btn-danger.rounded.align-self-end.mr-lg-3.mb-lg-5 {
   flex: 0 0 auto;
   // background: linear-gradient(
   //   40deg,
@@ -117,74 +151,51 @@ header > section > div > div.col-10.p-0 > div > div.d-flex > button{
   // );
 }
 
-header > section > div > div.col-10.p-0 > div > div.position-absolute{
-  left: 37%;
-  bottom: 100px;
-}
-
-header > section > div.row{
+.row.flex-nowrap.m-0 {
   height: 100vh;
 }
 
-
-.img-fluid.rounded.waves{
+.img-fluid.rounded.waves {
   height: 320px;
 }
 
-
-header > section > div > div.col-10.p-0 > div > div.card-title.text-center.overflow-hidden{
+.slide-title.overflow-hidden {
   position: absolute;
-  left: -80px;
+  left: 30px;
   height: 80px;
-  bottom: 289px;
-  z-index: 2;
+  bottom: 180px;
+  z-index: 3;
 }
 
-header > section > div > div.col-10.p-0 > div > div.card-title.text-center.overflow-hidden > p {
-  font-size: 5rem;
-}
-
-.display-1{
+.display-1 {
   font-weight: 500 !important;
 }
 
-header > section > div > div.col-10.p-0 > div > div.card-title.text-center.overflow-hidden > div, .card-no > div{
+header
+  > section
+  > div
+  > div.col-lg-10.p-0
+  > div
+  > div.slide-title.text-center.overflow-hidden
+  > div,
+.card-no > div {
   transition: 1.5s all ease;
 }
 
-.card-no{
+.card-no {
   position: absolute;
-  left: 97px;
-  top: 90px;
-  z-index: 1;
+  top: -20px;
+  z-index: 2;
   height: 151px;
-  // border: 1px solid #fff;
-  // background-color: #fff;
+  left: 95px;
 }
 
-
-header > section > div > div.col-2.p-0 > div > ul > li > a{
+a.nav-link {
   color: var(--danger);
-  
-}
-
-.banner-text{
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 75px;
 }
 
 
-div:nth-child(4) > div > div > h4{
-  // font-family: ;
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 42px;
-}
-
-div > div > div.col-12 > h2, 
-section > div.card-deck.white.black-text.p-5 > div > h2, 
-section.container > div:nth-child(1) > div > h2{
+h2.mb-4.pb-2.d-inline-block{
   font-size: 16px;
   font-weight: 600;
   text-transform: capitalize;
@@ -193,44 +204,62 @@ section.container > div:nth-child(1) > div > h2{
   color: var(--danger);
 }
 
-div > div > div.col-lg-7 > h3{
+h3.h3-responsive.mb-3 {
   font-size: 40px;
   line-height: 52px;
 }
 
-.para{
-  // background-image: url("../assets/images/mainslide3.jpg");
-  background-image:  linear-gradient(40deg, rgba(0, 51, 199, 0.52),  rgba(209, 149, 249, 0.3)), url("../assets/images/mainslide3.jpg");
-  // min-height: 00px;
+.parallax {
+  background-image: linear-gradient(
+      40deg,
+      rgba(0, 51, 199, 0.52),
+      rgba(209, 149, 249, 0.3)
+    ),
+    url("../assets/images/mainslide3.jpg");
   background-size: cover;
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center;
   background-attachment: fixed;
 }
 
-section > div:nth-child(4) > div.col-md-6.d-flex.flex-wrap.py-5 > div > mdb-card{
-  transition: background 250ms ease-in;
+mdb-card.bg-transparent.z-depth-0.white-text.card {
+  transition: all 250ms ease-in;
 }
-section > div:nth-child(4) > div.col-md-6.d-flex.flex-wrap.py-5 > div > mdb-card:hover {
+
+mdb-card.bg-transparent.z-depth-0.white-text.card:hover {
   background: var(--light) !important;
   color: var(--dark) !important;
 }
 
-.card .card .card-body .card-text{
-  color: var(--dark) !important;
-}
 
-
-section.container-fluid.text-white.para.mask > div:nth-child(4) > div.col-md-6.d-flex.flex-wrap.py-5 > div:nth-child(4) > mdb-card > mdb-card-body > mdb-card-text {
+section.container-fluid.text-white.parallax.mask
+  > div:nth-child(4)
+  > div.col-md-6.d-flex.flex-wrap.py-5
+  > div:nth-child(4)
+  > mdb-card
+  > mdb-card-body
+  > mdb-card-text {
   color: var(--light) !important;
 }
 
-section > div.card-deck.white.black-text.p-5 > mdb-card > mdb-card-body > mdb-card-title > h5{
+section
+  > div.card-deck.white.black-text.p-5
+  > mdb-card
+  > mdb-card-body
+  > mdb-card-title
+  > h5 {
   font-size: 26px;
   font-weight: 400;
 }
 
-section > div:nth-child(4) > div.col-md-6.d-flex.flex-wrap.py-5 > div > mdb-card > mdb-card-body > mdb-card-title > h5{
+section
+  > div:nth-child(4)
+  > div.col-md-6.d-flex.flex-wrap.py-5
+  > div
+  > mdb-card
+  > mdb-card-body
+  > mdb-card-title
+  > h5 {
   font-size: 20px;
 }
 
@@ -238,10 +267,49 @@ mdb-card-header > mdb-icon {
   font-size: 28px;
 }
 
-section > div:nth-child(4) > div.col-md-6.d-flex.flex-wrap.py-5 > div > mdb-card > mdb-card-body > mdb-card-text > p{
+section
+  > div:nth-child(4)
+  > div.col-md-6.d-flex.flex-wrap.py-5
+  > div
+  > mdb-card
+  > mdb-card-body
+  > mdb-card-text
+  > p {
   font-size: 15px;
 }
 
-section.container-fluid.text-white.para.mask > div:nth-child(4) > div.col-md-6.d-flex.flex-wrap.py-5 > div:nth-child(4) > mdb-card:hover section.container-fluid.text-white.para.mask > div:nth-child(4) > div.col-md-6.d-flex.flex-wrap.py-5 > div:nth-child(5) > mdb-card > mdb-card-body > mdb-card-text{
-  color: #000 !important;  
+
+section.container > div:nth-child(2) > div > ul > ul {
+  left: -100px;
+  top: 0;
+  // list-style: none;
+}
+
+.slide-heading{
+  font-size: 3.5em;
+  font-weight: 300;
+  line-height: 1.2; 
+}
+
+
+@media (max-width: 768px) {
+  div.col-lg-10.p-0 > div > div.d-flex.position-relative{
+    flex-direction: column-reverse;
+  }
+
+  button.btn.btn-danger.rounded.align-self-end.mr-lg-3.mb-lg-5{
+    align-self: center !important;
+  }
+}
+
+
+@media (max-width: 668px) {
+  .slide-title.overflow-hidden{
+    left: 0;
+  }
+}
+@media (max-width: 660px) {
+  .slide-heading{
+    font-size: 3rem;
+  }
 }
