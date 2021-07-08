@@ -11,7 +11,7 @@
 
     <div class="row flex-nowrap m-0">
 
-      <div class="col-2 p-0">
+      <div class="col-lg-2 col p-0">
         <!-- social -->
         <div class="d-flex justify-content-end align-items-end h-100">
           <ul class="nav flex-column darken-4 py-4">
@@ -40,15 +40,34 @@
         <!-- social -->
       </div>
 
-      <div class="col-10 p-0">
-        <div class="view d-flex h-100 align-items-center ml-5 position-relative">
-          <div class="d-flex">
+      <div class="col-lg-10 p-0">
+        <div class="view d-flex h-100 align-items-center ml-lg-5 position-relative">
+          <div class="d-flex position-relative">
 
-            <button style="z-index: 1;" class="btn btn-danger rounded align-self-end mr-lg-3" mdbWavesEffect>View  more</button>
+            <!-- slide no. -->
+            <div class="card-no overflow-hidden text-center rounded ">
+              <div class="position-relative custom-fade">
+                <p class="display-1 font-weight-bold p-3 text-dark accent-2" *ngFor="let slide of slides; index as i">
+                  0{{
+                  i + 1}}</p>
+              </div>
+            </div>
+            <!-- slide no. -->
+            <!-- slide title -->
+            <div class="slide-title overflow-hidden">
+              <div class="position-relative custom-fade">
+                <h1 class="slide-heading text-light" *ngFor="let slide of slides">{{ slide.title }}</h1>
+              </div>
+            </div>
+            <!-- slide title -->
 
-            <!-- <a mdbBtn color="success" mdbWavesEffect>view more</a> -->
+            <button style="z-index: 1;" class="btn btn-danger rounded align-self-end mr-lg-3 mb-lg-5"
+              mdbWavesEffect>View
+              more</button>
 
-            <div class="overflow-hidden">
+            <!-- slideshow -->
+            <div class="position-relative overflow-hidden py-5">
+
               <!-- slide img -->
               <div class="slideshow-container p-3 position-relative d-flex justify-content-between">
 
@@ -63,35 +82,24 @@
 
               </div>
               <!-- slide img -->
+
+              <!-- The dots/circles -->
+              <div style="text-align:center; z-index: 1;" class="dots position-absolute">
+                <span class="dot active" (click)="nextSlide(0)"></span>
+                <span class="dot" (click)="nextSlide(1)"></span>
+                <span class="dot" (click)="nextSlide(2)"></span>
+                <span class="dot" (click)="nextSlide(3)"></span>
+                <span class="dot" (click)="nextSlide(4)"></span>
+              </div>
+              <!-- The dots/circles -->
             </div>
+            <!-- slideshow -->
             <br>
+
+
           </div>
 
-          <!-- The dots/circles -->
-          <div style="text-align:center; z-index: 1;" class="position-absolute">
-            <span class="dot active" (click)="nextSlide(0)"></span>
-            <span class="dot" (click)="nextSlide(1)"></span>
-            <span class="dot" (click)="nextSlide(2)"></span>
-            <span class="dot" (click)="nextSlide(3)"></span>
-            <span class="dot" (click)="nextSlide(4)"></span>
-          </div>
-          <!-- The dots/circles -->
 
-          <!-- slide title -->
-          <div class="card-title text-center overflow-hidden">
-            <div class="position-relative custom-fade">
-              <h1 class="display-4 font-weight-bold text-dark" *ngFor="let slide of slides">{{ slide.title }}</h1>
-            </div>
-          </div>
-          <!-- slide title -->
-
-          <!-- slide no. -->
-          <div class="card-no overflow-hidden text-center rounded ">
-            <div class="position-relative custom-fade">
-              <p class="display-1 font-weight-bold p-3 text-light accent-2" *ngFor="let slide of slides; index as i">0{{ i + 1}}</p>
-            </div>
-          </div>
-          <!-- slide no. -->
         </div>
       </div>
 
@@ -103,11 +111,7 @@
 
 </header>
 <!-- Main navigation -->
-<!-- <div class="container-fluid mb-5">
-  <div class="row"
-    style="height:131px; background-image: url('../assets/images/Publication1.png'); background-repeat: no-repeat; background-size: cover; background-position: center bottom;">
-  </div>
-</div> -->
+<!-- <dis -->
 
 <div class="container mb-5 pt-5">
 
@@ -125,12 +129,12 @@
 
       <!-- Featured image -->
       <!-- <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect> -->
-      <img class="img-fluid rounded z-depth-2 waves-light" src="../assets/images/myimage.jpg" alt="Sample image"
-        mdbWavesEffect>
-      <!-- <a>
-              <div class="mask rgba-white-slight"></div>
-            </a> -->
-      <!-- </div> -->
+        <img class="img-fluid rounded z-depth-2 waves-light" src="../assets/images/myimage.jpg" alt="Sample image"
+          mdbWavesEffect>
+        <!-- <a>
+          <div class="mask rgba-white-slight"></div>
+        </a> -->
+      <!-- </div>4 -->
 
     </div>
     <!-- Grid column -->
@@ -138,10 +142,10 @@
     <!-- Grid column -->
     <div class="col-lg-7">
 
-      <h3 class="mb-3">I specialize in translating user and business needs into responsive
+      <h3 class="h3-responsive mb-3">I specialize in translating user and business needs into responsive
         front end code</h3>
 
-      <p class="lead">Donec luctus rhoncus dignissim. Integer blandit mattis arcu, id viverra orci condimentum a.
+      <p>Donec luctus rhoncus dignissim. Integer blandit mattis arcu, id viverra orci condimentum a.
         Quisque nibh tortor, mollis placerat semper ac, auctor quis mauris. Praesent dignissim sed magna eu urna
         consectetur, at pretium nisi aliquet. Sed vestibulum malesuada semper. Init Interdum et malesuada fames ac ante
         ipsum primis in faucibus. Donec malesuada nibh sed dolorinet libero posuere, sed cursus elit congue. Sed
@@ -149,7 +153,10 @@
         nibh sed dolorinet libero posuere, sed cursus elit congue donec malesuada nibhe</p>
 
       <!-- Read more button -->
-      <!-- <a mdbBtn color="success" mdbWavesEffect>view my work</a> -->
+      <a mdbBtn color="success" class="waves-light" rounded mdbWavesEffect>
+        <mdb-icon far icon="clone" class="left"></mdb-icon>
+        view my profile
+      </a>
 
     </div>
     <!-- Grid column -->
@@ -161,24 +168,17 @@
 </div>
 
 <!--Section: Services-->
-<section class="container-fluid text-white para mask">
+<section class="container-fluid text-white parallax mask">
 
   <!--Grid row-->
-  <div class="row ">
+  <div class="row py-4">
     <div class="col-12 ">
       <!--Section heading-->
-      <h2 class="h2 pt-5 pb-3 font-weight-bold text-center">I'm available for hire & freelance projects</h2>
+      <h2 class="h2 pb-3 font-weight-bold text-center">I'm available for hire & freelance projects</h2>
       <!--Section description-->
       <p class="px-5 mb-4 pb-2 lead text-center">Lets Work together indeed!.</p>
     </div>
-  </div>
-  <!--Grid row-->
-
-  <!--Grid row-->
-  <div class="row text-center mb-4">
-
-    <!--Grid column-->
-    <div class="col px-5">
+    <div class="col-12 text-center">
 
       <a mdbBtn color="pink" class="waves-light" rounded mdbWavesEffect>
         <mdb-icon far icon="clone" class="left"></mdb-icon>
@@ -190,15 +190,26 @@
       </a>
 
     </div>
-    <!--Grid column-->
   </div>
   <!--Grid row-->
 
-  <div class="card-deck white black-text p-5">
-    <div class="col-12">
+</section>
+<div class="container-lg p-sm-5 px-lg-0">
+
+  <!--Grid row-->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col">
       <h2 class="mb-4 pb-2 d-inline-block">Offerd Services</h2>
     </div>
+    <!--Grid column-->
 
+  </div>
+  <!-- Grid row -->
+
+  <!-- card-deck -->
+  <div class="card-deck">
     <mdb-card *ngFor="let card of cards; index as i" class="mb-3 mx-2" [hidden]="i > 2">
       <mdb-card-header class="border-0 pb-0 bg-transparent">
         <mdb-icon fas icon="{{ card.icon }}"></mdb-icon>
@@ -211,12 +222,18 @@
       </mdb-card-body>
     </mdb-card>
   </div>
+  <!-- card-deck -->
+
+</div>
+<div class="container-fluid parallax">
+
 
   <!-- Grid row -->
   <div class="row">
 
     <!-- Grid column -->
-    <div class="col-md-6 grey" style="background-image: url('../assets/images/WakeInternalMedicine-ResponsiveScreens-e1593623160290.png'); background-repeat: no-repeat; background-size: contain; background-position: center center;">
+    <div class="col-md-6 grey"
+      style="background-image: url('../assets/images/WakeInternalMedicine-ResponsiveScreens-e1593623160290.png'); background-repeat: no-repeat; background-size: contain; background-position: center center;">
       <!-- <img class="img-fluid" src="../assets/images/WakeInternalMedicine-ResponsiveScreens-e1593623160290.png" alt=""> -->
       <!-- <div class="mask rgba-black-strong"></div> -->
     </div>
@@ -225,7 +242,7 @@
 
       <!-- Nested Grid column -->
       <div class="col-sm-6 mb-3 p-0" *ngFor="let card of cards; index as i" [hidden]="i < 3">
-        <mdb-card class="bg-transparent z-depth-0" >
+        <mdb-card class="bg-transparent z-depth-0 white-text">
           <mdb-card-header class="border-0 pb-0 bg-transparent">
             <mdb-icon fas icon="{{ card.icon }}"></mdb-icon>
           </mdb-card-header>
@@ -245,7 +262,7 @@
   </div>
   <!-- Grid row -->
 
-</section>
+</div>
 <!--/Section: Services-->
 
 <!--Projects section v.4-->
@@ -256,19 +273,19 @@
     </div>
   </div>
   <div class="row">
-    <div class="col d-flex justify-content-center align-items-center">
+    <div class="col d-flex flex-column justify-content-center align-items-center">
       <p class="text-center">Experts In Field</p>
-      <ul>
-        <li><a href="http://slowcode.co.">Slowcode</a></li>
+      <ul class="position-relative">
         <li></li>
         <li><a href="http://slowcode.co.">Slowcode</a></li>
         <li></li>
+        <li><a href="http://slowcode.co.">Slowcode</a></li>
 
-        <ul>
-          <li></li>
+        <ul class="position-absolute">
           <li><a href="http://slowcode.co.">Slowcode</a></li>
           <li></li>
           <li><a href="http://slowcode.co.">Slowcode</a></li>
+          <li></li>
         </ul>
 
       </ul>

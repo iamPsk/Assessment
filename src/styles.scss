@@ -1,33 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
-body,
-html,
-header{
-  // min-height: 100vh;
-}
+// body,
+// html,
+// header {
+//   min-height: 100vh;
+// }
 
 @font-face {
-  font-family: 'Lobster-Regular';
-  src: url('./assets/fonts/Lobster-Regular.ttf') format('truetype');
+  font-family: "Lobster-Regular";
+  src: url("./assets/fonts/Lobster-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Pacifico-Regular';
-  src: url('./assets/fonts/Pacifico-Regular.ttf') format('truetype');
+  font-family: "Pacifico-Regular";
+  src: url("./assets/fonts/Pacifico-Regular.ttf") format("truetype");
 }
 
 .top-nav-collapse {
   // background: linear-gradient(40deg, rgba(0, 0, 0, 0.3), rgba(45, 0, 75, 0.3));
   // background-color: #f8bbd0 !important;
-  
-  background: linear-gradient(120deg, rgba(224, 195, 252, 0.5) 0%, rgba(142, 197, 252, 0.5) 100%);
 
+  background: linear-gradient(
+    120deg,
+    rgba(224, 195, 252, 0.5) 0%,
+    rgba(142, 197, 252, 0.5) 100%
+  );
 }
 
-.top-nav-collapse a{
+.top-nav-collapse a {
   color: #fff !important;
 }
 
 .navbar {
-  background: linear-gradient(40deg, rgba(0,51,199,.3), rgba(209,149,249,.3));
+  background: linear-gradient(
+    40deg,
+    rgba(0, 51, 199, 0.3),
+    rgba(209, 149, 249, 0.3)
+  );
   padding-left: 6rem;
   padding-right: 6rem;
 }
@@ -36,25 +43,43 @@ header{
   background: transparent;
 }
 
-section.container-fluid.text-white.para.mask > div:nth-child(4) > div.col-md-6.d-flex.flex-wrap.py-5 .card .card-body .card-text{
-  color: var(--light);
-
+div > div.col-md-6.d-flex.flex-wrap.py-5 p.card-text {
+  color: var(--light) !important;
+  transition: color 250ms ease;
 }
 
-section.container-fluid.text-white.para.mask > div:nth-child(4) > div.col-md-6.d-flex.flex-wrap.py-5 .card:hover section.container-fluid.text-white.para.mask > div:nth-child(4) > div.col-md-6.d-flex.flex-wrap.py-5 .card .card-body .card-text{
-  color: var(--dark) !important;
+div > div.col-md-6.d-flex.flex-wrap.py-5 .card:hover p.card-text{
+  color: #747373 !important;
 }
 
 @media (max-width: 991px) {
   .navbar:not(.top-nav-collapse) {
-    background: linear-gradient(120deg, rgba(224, 195, 252, 0.5) 0%, rgba(142, 197, 252, 0.5) 100%);
-  }
-}
-@media (max-width: 740px) {
-  html,
-  body,
-  header {
-    // height: 100vh;
+    background: linear-gradient(
+      120deg,
+      rgba(224, 195, 252, 0.5) 0%,
+      rgba(142, 197, 252, 0.5) 100%
+    );
   }
 }
 
+@media (max-width: 575px) {
+  .navbar:not(.top-nav-collapse) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .navbar:not(.top-nav-collapse) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+// @media (max-width: 740px) {
+//   html,
+//   body,
+//   header {
+//     height: 100vh;
+//   }
+// }
