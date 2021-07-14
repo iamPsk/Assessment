@@ -12,7 +12,7 @@
       <div class="col-lg-2 col p-0 ">
         <!-- social -->
         <div class="d-flex justify-content-end align-items-end h-100">
-          <ul class="nav flex-column darken-4 py-4">
+          <ul class="nav flex-column darken-4">
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <mdb-icon fab icon="pinterest-p"></mdb-icon>
@@ -39,7 +39,7 @@
       </div>
 
       <div class="col-lg-10 p-0">
-        <div class="view d-flex h-100 align-items-center pl-sm-4 ml-lg-5 position-relative">
+        <div class="view d-flex h-100 align-items-center px-2 px-md-0 position-relative flex-column justify-content-center pt-5">
           <div class="d-flex position-relative">
 
             <!-- slide no. -->
@@ -59,19 +59,19 @@
             </div>
             <!-- slide title -->
 
-            <button style="z-index: 1;" class="btn btn-danger rounded align-self-end mr-lg-3 mb-lg-5"
+            <button style="z-index: 1;" class="btn btn-danger rounded align-self-end mr-lg-3"
               mdbWavesEffect>View
               more</button>
 
             <!-- slideshow -->
-            <div class="position-relative overflow-hidden py-5">
+            <div class="position-relative overflow-hidden">
 
               <!-- slide img -->
               <div class="slideshow-container p-3 position-relative d-flex justify-content-between">
 
 
                 <!-- Full-width images with number and caption text -->
-                <div class="my-slides shadow" *ngFor="let slide of slides">
+                <div class="my-slides shadow rounded" *ngFor="let slide of slides">
                   <!-- <div class="numbertext">1 / 3</div> -->
                   <img class="img-fluid rounded waves z-depth-1" src="{{ slide.img }}">
                   <!-- <div class="text">Caption Text</div> -->
@@ -81,15 +81,8 @@
               </div>
               <!-- slide img -->
 
-              <!-- The dots/circles -->
-              <div style="text-align:center; z-index: 1;" class="dots position-absolute">
-                <span class="dot active" (click)="nextSlide(0)"></span>
-                <span class="dot" (click)="nextSlide(1)"></span>
-                <span class="dot" (click)="nextSlide(2)"></span>
-                <span class="dot" (click)="nextSlide(3)"></span>
-                <span class="dot" (click)="nextSlide(4)"></span>
-              </div>
-              <!-- The dots/circles -->
+
+
             </div>
             <!-- slideshow -->
             <br>
@@ -97,7 +90,15 @@
 
           </div>
 
-
+          <!-- The dots/circles -->
+          <div style="z-index: 1;" class="dots">
+            <span class="dot active" (click)="nextSlide(0)"></span>
+            <span class="dot" (click)="nextSlide(1)"></span>
+            <span class="dot" (click)="nextSlide(2)"></span>
+            <span class="dot" (click)="nextSlide(3)"></span>
+            <span class="dot" (click)="nextSlide(4)"></span>
+          </div>
+          <!-- The dots/circles -->
         </div>
       </div>
 
