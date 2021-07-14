@@ -8,3 +8,10 @@ export interface Card {
   description: string,
   icon?: string
 }
+
+export interface Experience {
+  title: string,
+  description: string,
+  company: string,
+  href?: string,
+}
