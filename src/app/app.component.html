@@ -4,28 +4,31 @@
     <img src="../assets/images/Publication1.png" alt="">
   </div>
 </div> -->
-<div class="container py-4">
+<div class="container py-5">
 
-  <!-- Grid row -->
+  <!-- grid row -->
   <div class="row">
-
     <!-- Grid column -->
     <div class="col-12">
       <h2 class="mb-4 pb-2 d-inline-block">About Me</h2>
     </div>
     <!-- Grid column -->
+  </div>
+  <!-- grid row -->
 
+  <!-- Grid row -->
+  <div class="row justify-content-center">
     <!-- Grid column -->
-    <div class="col-lg-5">
+    <div class="col-lg-4">
 
       <!-- Featured image -->
-      <!-- <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect> -->
-      <img class="img-fluid rounded z-depth-2 waves-light" src="../assets/images/myimage.jpg" alt="Sample image"
-        mdbWavesEffect>
-      <!-- <a>
+      <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
+        <img class="img-fluid rounded z-depth-2 waves-light" src="../assets/images/myimage.jpg" alt="Sample image"
+          mdbWavesEffect>
+        <a>
           <div class="mask rgba-white-slight"></div>
-        </a> -->
-      <!-- </div>4 -->
+        </a>
+      </div>
 
     </div>
     <!-- Grid column -->
@@ -33,10 +36,9 @@
     <!-- Grid column -->
     <div class="col-lg-7">
 
-      <h3 class="h3-responsive mb-3">I specialize in translating user and business needs into responsive
-        front end code</h3>
+      <h3 class="display-4 mb-4">Why hire me for your next project</h3>
 
-      <p>Donec luctus rhoncus dignissim. Integer blandit mattis arcu, id viverra orci condimentum a.
+      <p class="mb-4 pl-3">Donec luctus rhoncus dignissim. Integer blandit mattis arcu, id viverra orci condimentum a.
         Quisque nibh tortor, mollis placerat semper ac, auctor quis mauris. Praesent dignissim sed magna eu urna
         consectetur, at pretium nisi aliquet. Sed vestibulum malesuada semper. Init Interdum et malesuada fames ac ante
         ipsum primis in faucibus. Donec malesuada nibh sed dolorinet libero posuere, sed cursus elit congue. Sed
@@ -85,7 +87,7 @@
   <!--Grid row-->
 
 </section>
-<div class="container-lg p-sm-5 px-lg-0">
+<div class="container-lg py-5">
 
   <!--Grid row-->
   <div class="row">
@@ -175,9 +177,9 @@
       <table>
         <tbody>
           <tr *ngFor="let experience of experiences; index as i">
-            
+
             <td *ngIf="!(i % 2 == 0)" class="position-relative"></td>
-            
+
             <td><a href="{{ experience.href }}" target="_blank">
                 <mdb-card class="z-depth-0 bg-transparent">
                   <mdb-card-header class="bg-transparent border-0 p-0">
