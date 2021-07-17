@@ -13,10 +13,10 @@
   z-index: 2;
 }
 
-.slide-heading{
-  font-size: 3.5em;
+.slide-heading {
+  // font-size: 2.5em;
   font-weight: 300;
-  line-height: 1.2; 
+  // line-height: 1.2;
 }
 
 .my-slides {
@@ -110,9 +110,9 @@
 
 .dot {
   cursor: pointer;
-  height: 1.6px;
+  height: 0.125rem;
   width: 60px;
-  margin: 0px 3px;
+  margin: 12px 3px;
   background-color: var(--danger);
   border-radius: 8px;
   display: inline-block;
@@ -209,31 +209,113 @@ a.nav-link {
   color: var(--danger);
 }
 
-
-
 @media (max-width: 768px) {
-  div.col-lg-10.p-0 > div > div.d-flex.position-relative{
+  div.col-lg-10.p-0 > div > div.d-flex.position-relative {
     flex-direction: column-reverse;
   }
 
-  button.btn.btn-danger.rounded.align-self-end.mr-lg-3{
+  button.btn.btn-danger.rounded.align-self-end.mr-lg-3 {
     align-self: center !important;
   }
-}
 
-
-@media (max-width: 668px) {
-  .slide-title.overflow-hidden{
+  .slide-title.overflow-hidden {
     left: 0;
   }
 }
-@media (max-width: 660px) {
-  .slide-heading{
-    font-size: 3rem;
-  }
 
-  header > section > div > div.col-lg-2.col.p-0 > div{
+@media (max-width: 668px) {
+  .slide-title.overflow-hidden {
+    left: 0;
+  }
+}
+
+@media (max-width: 660px) {
+  // .slide-heading{
+  //   font-size: 3rem;
+  // }
+
+  header > section > div > div.col-lg-2.col.p-0 > div {
     position: absolute;
   }
 }
 
+@media (max-width: 425px) {
+  .dots > .dot {
+    width: 3.4rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .dots > .dot {
+    width: 3rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .dots > .dot {
+    width: 2.5em;
+  }
+}
+
+// min-width(500px){
+// font-size: 270%;
+// }
+
+// min-width(425px){
+// font-size: 235%;
+// }
+// min-width(375px){
+// font-size: 200%;
+// }
+// min-width(375px){
+// font-size: 190%;
+// }
+// min-width(320px){
+// font-size: 150%;
+// }
+// min-wdth 1200, 992 768 567
+
+@media (min-width: 320px) {
+  .h1-responsive {
+    font-size: 150%;
+  }
+}
+
+
+@media (min-width: 375px) {
+  .h1-responsive {
+    font-size: 190%;
+  }
+}
+
+
+@media (min-width: 425px) {
+  .h1-responsive {
+    font-size: 235%;
+  }
+}
+
+
+@media (min-width: 567px) {
+  .h1-responsive {
+    font-size: 270%;
+  }
+}
+
+@media (min-width: 768px) {
+  .h1-responsive {
+    font-size: 350%;
+  }
+}
+
+@media (min-width: 992px) {
+  .h1-responsive {
+    font-size: 350%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .h1-responsive {
+    font-size: 350%;
+  }
+}
