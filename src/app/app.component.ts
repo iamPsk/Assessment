@@ -27,32 +27,32 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'UI & UX',
-      description: 'user interfaces for desktop, and mobile, with the focus on maximizing usability and the user experience. The goal is to make the user interaction as simple and efficient as possible, (user-centered design).',
+      description: 'user interfaces with the focus on maximizing usability and the user experience.',
       icon: 'eye'
     },
     {
       title: 'Content/ Copywrite',
-      description: 'content that aims to increase brand awareness and ultimately persuade a person or group to take a particular action, and or produce technical documentation that helps customers understand and use a product or service.',
+      description: 'content that aims to increase brand awareness and persuade a person to take a particular action',
       icon: "edit"
     },
     {
       title: 'Quality focus',
-      description: 'Specific tools and techniques, such as continuous integration, automated unit testing, test-driven development, design patterns, code refactoring and other techniques to improve quality and enhance product development agility.',
+      description: 'continuous integration, test-driven, design patterns, and other techniques to enhance development.',
       icon: 'shield-alt'
     },
     {
       title: 'Web Accessibility',
-      description: 'Websites, tools, and technologies that are designed and developed so that people with disabilities can use them. More specifically, perceive, understand, navigate, and interact with the Web',
+      description: 'Websites that are designed and developed so that people with disabilities can use them.',
       icon: 'universal-access'
     },
     {
       title: 'Maintain',
-      description: 'Content management, changes, hosting and maintenance for as long as the client would like',
+      description: 'Content management, changes, hosting and website maintenance',
       icon: 'tools'
     },
     {
       title: 'Scalable',
-      description: 'Website that is able to handle an increase in users and load, whether in terms of a gradual or abrupt surge, without disrupting end-users',
+      description: 'Website that is able to handle an increase in users and load without disrupting end-users',
       icon: "expand-arrows-alt"
     },
     // [33] This is predicated on designing and building quality in from the beginning and being able to demonstrate software for customers at any point, or at least at the end of every iteration
@@ -98,7 +98,31 @@ export class AppComponent implements OnInit {
 
   }
 
-  ngOnInit() {  }
-    
+  ngOnInit() {
+  }
 
+  // Select the node that will be observed for mutations
+  // var targetNode = document.getElementById('some-id');
+
+  // Options for the observer (which mutations to observe)
+  // var config = { attributes: true, childList: true, subtree: true };
+
+  // Callback function to execute when mutations are observed
+  // var callback = function(mutationsList, observer) {
+  // for(var mutation of mutationsList) {
+  // if (mutation.type == 'childList') {
+  // console.log('A child node has been added or removed.');
+  // }
+  // else/ if (mutation.type == 'attributes') {
+  // console.log('The ' + mutation.attributeName + ' attribute was modified.');
+  // }
+  // }
+  // };
+
+
+  // Start observing the target node for configured mutations
+  // observer.observe(targetNode, config);
+
+  // Later, you can stop observing
+  // observer.disconnect();
 }
