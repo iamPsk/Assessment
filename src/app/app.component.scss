@@ -94,9 +94,12 @@ section
   font-size: 15px;
 }
 
-
+table{
+  table-layout: fixed;
+}
 td{
   padding: 0 1em;
+  width: 400px;
 }
 
 td > a {
@@ -144,4 +147,28 @@ td.position-relative::before{
 td.position-relative:nth-child(odd)::before {
   right: -5px;
   left: unset;
+}
+
+
+@media (max-width:574.9px){
+  td.position-relative{
+    display: none;
+  }
+
+  td, td:nth-child(odd){
+    border: none;
+    border-left: 1px solid var(--danger);
+    text-align: left;
+  }
+  
+  td::before{
+    content: '';
+    position: absolute;
+    left: 82px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--dark);
+    border-radius: 50%;
+  }
 }
