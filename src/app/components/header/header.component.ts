@@ -78,21 +78,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   activateObserver(){
     let titleH1: HTMLElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden > div > h1")
-
-    // let titleSlider = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden > div")
-
     let resizeDiv = document.querySelector('body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div')
-
     let sliderContainer:HTMLDivElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden")
-
     let it: HTMLElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.position-relative.overflow-hidden > div > div:nth-child(1)")
 
-    const resizeObserver = new ResizeObserver(() => {
+    let observer = new (window as any).ResizeObserver(() => {
       this.slideWidth = it.offsetWidth + 48
       sliderContainer.style.height = `${titleH1.offsetHeight + 8}px`    
-      // console.log('sizechanged');
     });
 
-    resizeObserver.observe(resizeDiv)
+    observer.observe(resizeDiv)
   }
 }
