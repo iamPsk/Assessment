@@ -178,7 +178,8 @@ button.btn.btn-danger.rounded.align-self-end.mr-lg-3 {
   position: absolute;
   left: 30px;
   height: 80px;
-  bottom: 120px;
+  top: 50%;
+  transform: translate(0, -50%);
   z-index: 3;
 }
 
@@ -230,10 +231,10 @@ a.nav-link {
 }
 
 @media (max-width: 660px) {
-  // .slide-heading{
-  //   font-size: 3rem;
-  // }
 
+  .align-items-end.d-flex.h-100.justify-content-end{
+    z-index: 3;
+  }
   header > section > div > div.col-lg-2.col.p-0 > div {
     position: absolute;
   }
@@ -257,23 +258,6 @@ a.nav-link {
   }
 }
 
-// min-width(500px){
-// font-size: 270%;
-// }
-
-// min-width(425px){
-// font-size: 235%;
-// }
-// min-width(375px){
-// font-size: 200%;
-// }
-// min-width(375px){
-// font-size: 190%;
-// }
-// min-width(320px){
-// font-size: 150%;
-// }
-// min-wdth 1200, 992 768 567
 
 @media (min-width: 320px) {
   .h1-responsive {
@@ -308,14 +292,14 @@ a.nav-link {
   }
 }
 
-@media (min-width: 992px) {
-  .h1-responsive {
-    font-size: 350%;
-  }
-}
+// @media (min-width: 992px) {
+//   .h1-responsive {
+//     font-size: 350%;
+//   }
+// }
 
-@media (min-width: 1200px) {
-  .h1-responsive {
-    font-size: 350%;
-  }
-}
+// @media (min-width: 1200px) {
+//   .h1-responsive {
+//     font-size: 350%;
+//   }
+// }

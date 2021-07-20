@@ -161,7 +161,7 @@ td.position-relative:nth-child(odd)::before {
     text-align: left;
   }
   
-  td::before{
+  td > a::after{
     content: '';
     position: absolute;
     left: 82px;
