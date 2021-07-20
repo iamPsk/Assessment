@@ -37,17 +37,24 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     },
   ]
 
-  constructor() { 
+  constructor() {
   }
-  
+
   ngOnInit(): void {
-    // this.nextSlide(0);
+
   }
-  
+
   ngAfterViewInit(): void {
     this.nextSlide(0)
     this.activateObserver()
+
+    let x = this.counter()
+
+    setInterval(() => {
+      this.nextSlide(x.next().value)
+    }, 5000)
   }
+
 
   nextSlide(n) {
     let titleH1: HTMLElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden > div > h1:nth-child(1)")
@@ -56,7 +63,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     let slideContainer: HTMLDivElement = document.querySelector('.slideshow-container');
     let slideTitle: HTMLDivElement = document.querySelector(".slide-title.overflow-hidden > div")
     let cardNo: HTMLDivElement = document.querySelector("div.card-no.text-center.overflow-hidden.rounded > div")
-    
+
     this.slideIndex = n
     slideContainer.style.left = `-${this.slideWidth * this.slideIndex}px`
     // slideTitle.style.bottom = `${this.titleHeight * this.slideIndex}px`
@@ -76,15 +83,30 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     }
   }
 
-  activateObserver(){
+  counter() {
+
+    function* gen() {
+      for (let i = 0; i < 5; i++) {
+        yield i
+
+        if (i == 4) {
+          i = -1
+        }
+      }
+    }
+
+    return gen()
+  }
+
+  activateObserver() {
     let titleH1: HTMLElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden > div > h1")
     let resizeDiv = document.querySelector('body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div')
-    let sliderContainer:HTMLDivElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden")
+    let sliderContainer: HTMLDivElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden")
     let it: HTMLElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.position-relative.overflow-hidden > div > div:nth-child(1)")
 
     let observer = new (window as any).ResizeObserver(() => {
       this.slideWidth = it.offsetWidth + 48
-      sliderContainer.style.height = `${titleH1.offsetHeight + 8}px`    
+      sliderContainer.style.height = `${titleH1.offsetHeight + 8}px`
     });
 
     observer.observe(resizeDiv)
