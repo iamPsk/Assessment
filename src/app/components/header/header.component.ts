@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   slideTitleHeight: number = 75;
   cardNo: number = 165;
 
+
   slides: Array<Slide> = [
     {
       img: '../assets/images/1.jpg',
@@ -41,43 +42,74 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-
+    this.nextslide(this.slideIndex)
   }
 
   ngAfterViewInit(): void {
 
     let titleH1: HTMLElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden > div > h1:nth-child(1)")
 
+    console.log(titleH1.offsetHeight);
+    
     this.slideTitleHeight = titleH1.offsetHeight
-    this.nextSlide(this.slideIndex)
+    titleH1.style.height = `${titleH1.offsetHeight / 2}px`
 
     this.activateObserver()
 
-    let x = this.counter()
+    // let x = this.counter()
 
-    setInterval(() => {
-      this.nextSlide(x.next().value)
-    }, 5000)
+    // setInterval(() => {
+    //   this.nextSlide(x.next().value)
+    // }, 5000)
   }
 
-
-  nextSlide(n) {
-    let titleH1: HTMLElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden > div > h1:nth-child(1)")
-
+  nextslide(n){
+    
     let slideContainer: HTMLDivElement = document.querySelector('.slideshow-container');
     let slideTitle: HTMLDivElement = document.querySelector(".slide-title.overflow-hidden > div")
     let cardNo: HTMLDivElement = document.querySelector("div.card-no.text-center.overflow-hidden.rounded > div")
 
-    this.slideIndex = n
+    slideContainer.animate(
+      [
+        { 
+          left: `-${this.slideWidth * n}px`
+        }
+      ], {
+        duration: 1000,
+        easing: "ease",
+        fill: "both",
+      }
+    )
 
-    slideContainer.style.left = `-${this.slideWidth * this.slideIndex}px`
-    slideTitle.style.bottom = `${(this.slideTitleHeight + 8) * this.slideIndex}px`
-    cardNo.style.bottom = `${this.cardNo * this.slideIndex}px`
+    slideTitle.animate(
+      [
+        { 
+          bottom: `${(this.slideTitleHeight + 8) * n}px`
+        }
+      ], {
+        duration: 1000,
+        easing: "ease-in",
+        fill: "both"
+      }
+    )
 
-    this.toggleDots()
+    cardNo.animate(
+      [
+        { 
+          bottom: `${this.cardNo * n}px`
+        }
+      ], {
+        duration: 1000,
+        easing: "ease-out",
+        fill: "both"
+      }
+    )
+
+    this.toggleDots(n)
+
   }
 
-  toggleDots(){
+  toggleDots(n){
 
     let dots: HTMLCollection = document.getElementsByClassName('dot');
 
@@ -88,7 +120,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       }
 
 
-      if (i == this.slideIndex) {
+      if (i == n) {
         dots[i].classList.add('active')
       }
     }
