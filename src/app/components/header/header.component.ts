@@ -9,10 +9,9 @@ import { Slide } from 'src/app/models/interfaces';
 
 export class HeaderComponent implements OnInit, AfterViewInit {
   slideIndex = 0;
-  slideWidth: number = 608;
-  slideTitleHeight: number = 75;
+  slideWidth: number;
+  slideTitleHeight: number;
   cardNo: number = 165;
-
 
   slides: Array<Slide> = [
     {
@@ -42,74 +41,59 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.nextslide(this.slideIndex)
+
   }
 
   ngAfterViewInit(): void {
-
-    let titleH1: HTMLElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden > div > h1:nth-child(1)")
-
-    console.log(titleH1.offsetHeight);
-    
-    this.slideTitleHeight = titleH1.offsetHeight
-    titleH1.style.height = `${titleH1.offsetHeight / 2}px`
 
     this.activateObserver()
 
     // let x = this.counter()
 
     // setInterval(() => {
-    //   this.nextSlide(x.next().value)
+    //   this.nextslide(x.next().value)
     // }, 5000)
+
   }
 
-  nextslide(n){
-    
+
+  nextslide(n) {
+
     let slideContainer: HTMLDivElement = document.querySelector('.slideshow-container');
     let slideTitle: HTMLDivElement = document.querySelector(".slide-title.overflow-hidden > div")
     let cardNo: HTMLDivElement = document.querySelector("div.card-no.text-center.overflow-hidden.rounded > div")
 
-    slideContainer.animate(
-      [
-        { 
-          left: `-${this.slideWidth * n}px`
-        }
-      ], {
+    slideContainer.animate({
+      left: `-${this.slideWidth * n}px`,
+    },
+      {
         duration: 1000,
         easing: "ease",
         fill: "both",
-      }
-    )
+      })
 
-    slideTitle.animate(
-      [
-        { 
-          bottom: `${(this.slideTitleHeight + 8) * n}px`
-        }
-      ], {
-        duration: 1000,
-        easing: "ease-in",
-        fill: "both"
-      }
-    )
+    slideTitle.animate({
+      bottom: `${this.slideTitleHeight * n}px`,
+    }, {
+      duration: 1000,
+      easing: "ease-in",
+      fill: "both"
+    })
 
-    cardNo.animate(
-      [
-        { 
-          bottom: `${this.cardNo * n}px`
-        }
-      ], {
+    cardNo.animate({
+      bottom: `${this.cardNo * n}px`,
+    },
+      {
         duration: 1000,
         easing: "ease-out",
-        fill: "both"
-      }
-    )
+        fill: "both",
+      })
 
     this.toggleDots(n)
 
   }
 
-  toggleDots(n){
+  toggleDots(n) {
 
     let dots: HTMLCollection = document.getElementsByClassName('dot');
 
@@ -142,18 +126,19 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   activateObserver() {
-    let titleH1: HTMLElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden > div > h1")
-    let resizeDiv = document.querySelector('body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div')
-    let sliderContainer: HTMLDivElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.slide-title.overflow-hidden")
-    
-    let it: HTMLElement = document.querySelector("body > app-root > app-header > header > section > div > div.col-lg-10.p-0 > div > div.d-flex.position-relative > div.position-relative.overflow-hidden > div > div:nth-child(1)")
+    let h1: HTMLElement = document.querySelector("h1.slide-heading.h1-responsive.text-light")
+    let div: HTMLDivElement = document.querySelector('header > section > div > div.col-lg-10.p-0 > div')
+    let h1Container: HTMLDivElement = document.querySelector(".slide-title.overflow-hidden")
+    let imgContainer: HTMLElement = document.querySelector(".my-slides.shadow.rounded")
 
     let observer = new (window as any).ResizeObserver(() => {
-      this.slideWidth = it.offsetWidth + 48
-      this.slideTitleHeight = titleH1.offsetHeight
-      sliderContainer.style.height = `${this.slideTitleHeight + 8}px`
+      
+      this.slideWidth = imgContainer.offsetWidth + 48
+      this.slideTitleHeight = h1.offsetHeight + 8
+
+      h1Container.style.height = `${this.slideTitleHeight}px`
     });
 
-    observer.observe(resizeDiv)
+    observer.observe(div)
   }
 }
