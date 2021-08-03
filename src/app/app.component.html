@@ -4,6 +4,9 @@
     <img src="../assets/images/Publication1.png" alt="">
   </div>
 </div> -->
+
+
+<!-- section: About me -->
 <div class="container py-5">
 
   <!-- grid row -->
@@ -59,6 +62,7 @@
   </div>
 
 </div>
+<!-- section: About me -->
 
 <!--Section: Services-->
 <section class="container-fluid text-white parallax mask">
@@ -170,17 +174,17 @@
       <p class="h3 text-center">Experts In Field</p>
       <p class="text-center">Past experiences</p>
     </div>
-    <div class="col-12 d-flex justify-content-center align-items-center">
-      <!-- <ul class="position-relative">
-          <li></li>
-      </ul> -->
+    <div class="col-12 p-4 d-flex justify-content-center align-items-center">
+
       <table>
         <tbody>
           <tr *ngFor="let experience of experiences; index as i">
 
-            <td *ngIf="!(i % 2 == 0)" class="position-relative"></td>
+            <td *ngIf="!(i % 2 == 0)"></td>
 
-            <td class="positon-relative"><div class="custom-dot"><div></div></div><a href="{{ experience.href }}" target="_blank">
+            <td class="positon-relative">
+              <!-- <div class="custom-dot"></div> -->
+              <a href="{{ experience.href }}" target="_blank">
                 <mdb-card class="z-depth-0 bg-transparent">
                   <mdb-card-header class="bg-transparent border-0 p-0">
                     {{ experience.title }}
@@ -192,9 +196,10 @@
                     <mdb-card-text>{{ experience.description }}</mdb-card-text>
                   </mdb-card-body>
                 </mdb-card>
-              </a></td>
+              </a>
+            </td>
 
-            <td *ngIf="i % 2 == 0" class="position-relative"></td>
+            <td *ngIf="i % 2 == 0"></td>
           </tr>
         </tbody>
       </table>
@@ -202,5 +207,17 @@
   </div>
 </section>
 <!--Projects section v.4-->
+
+<!-- app-testomonials -->
 <app-testomonials></app-testomonials>
+<!-- app-testomonials -->
+
+
+<!-- app contact -->
+<app-contact></app-contact>
+<!-- app contact -->
+
+
+<!-- app-footer -->
 <app-footer></app-footer>
+<!-- app-footer -->
