@@ -9,6 +9,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TestomonialsComponent } from './components/testomonials/testomonials.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TestomonialsComponent } from './components/testomonials/testomonials.co
     NavComponent,
     FooterComponent,
     HeaderComponent,
-    TestomonialsComponent
+    TestomonialsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
