@@ -36,34 +36,19 @@ section > div.row > div.pill-2.col-12 > div > mdb-card.rounded.z-depth-2.bg-seco
 }
 
 .top-nav-collapse {
-  background: linear-gradient(40deg, rgba(0, 0, 0, 0.3), rgba(45, 0, 75, 0.3));
-  // background-color: #f8bbd0 !important;
-
-  // background: linear-gradient(
-  //   120deg,
-  //   rgba(224, 195, 252, 0.5) 0%,
-  //   rgba(142, 197, 252, 0.5) 100%
-  // );
-}
-
-.top-nav-collapse a {
-  color: #fff !important;
-}
-
-.navbar {
-  // background: linear-gradient(
-  //   40deg,
-  //   rgba(0, 51, 199, 0.3),
-  //   rgba(209, 149, 249, 0.3)
-  // );
-  background: #beb5f8;
-  // padding-left: 6rem;
-  // padding-right: 6rem;
+  background-color: #39448c !important;
 }
 
 .navbar:not(.top-nav-collapse) {
-  background: transparent;
+  background: transparent !important;
 }
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #39448c !important;
+  }
+}
+
 
 div > div.col-md-6.d-flex.flex-wrap.py-5 p.card-text {
   color: var(--light) !important;
@@ -124,7 +109,7 @@ div > div.col-md-6.d-flex.flex-wrap.py-5 .card:hover p.card-text{
 }
 
 .card .card-body .card-text{
-  font-size: 3rem !important;
+  font-size: 4rem !important;
 }
 
 .carousel-control-prev-icon::before {

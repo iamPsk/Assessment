@@ -3,7 +3,7 @@
   <!--Navbar-->
   <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
     <mdb-navbar-brand>
-      <a class="logo navbar-brand waves-light" mdbWavesEffect href="#"><strong>MDB</strong></a>
+      <a class="logo navbar-brand waves-light" mdbWavesEffect href="#"><strong>Source Code</strong></a>
     </mdb-navbar-brand>
     <links>
       <ul class="navbar-nav mr-auto">
@@ -11,7 +11,7 @@
           <a class="nav-link" href="#">Task 1 <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item waves-light" mdbWavesEffect>
-          <a class="nav-link" href="#">Task 2</a>
+          <a class="nav-link" routerLink="/task2">Task 2</a>
         </li>
       </ul>
     </links>
@@ -21,86 +21,100 @@
 </header>
 <!-- Main navigation -->
 
-  <!-- Full Page Intro -->
-  <div class="view">
-    <!-- Mask & flexbox options-->
-    <div class="danger-color d-flex justify-content-center align-items-center">
-      <!-- Content -->
-      <div class="container">
-        <!--Grid row-->
-        <div class="row align-items-center pt-lg-5 mt-lg-5">
-          <!--Grid column-->
-          <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft"
-            data-wow-delay="0.3s">
-            <h1 class="display-4 font-weight-bold">learn to code by watching others</h1>
-            <p>see how experienced developerssolve problems in real-time. Watching scripted tutorials is great, but
-              understanding how developers think is invalueable</p>
-          </div>
-          <!--Grid column-->
-
-          
-          <!--Grid column-->
-          <div class="col-md-6 col-xl-5 mb-4">
-            <button mdbBtn  block="true" class="my-4 font-weight-bold rounded" type="submit">Try it free 7 days <span class="font-weight-normal text-white-50">then $20/mo
-                thereafter</span></button>
-            <!--Form-->
-            <!-- Default form register -->
-            <form class="rounded z-depth-1-half text-center white border border-light p-5">
-
-              <!-- First-name -->
-              <div class="form-group position-relative">
-                <input ngModel mdbInput mdbValidate name="firstname" type="text" placeholder="firstname" id="input1" class="form-control mb-4" #firstname="ngModel" required>
-                <mdb-icon *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="exclam" fas icon="exclamation-circle"></mdb-icon>
-                <mdb-error *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">firstname cannot be empty</mdb-error>
-              </div>
-
-              <!-- <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder="First name"> -->
-              
-              <!-- Last-name -->
-              <div class="form-group position-relative">
-                <input ngModel mdbInput mdbValidate name="lastname" type="text" placeholder="lastname" id="input2" class="form-control mb-4" #lastname="ngModel" required>
-                <mdb-icon *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="exclam" fas icon="exclamation-circle"></mdb-icon>
-                <mdb-error *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">Lastname cannot be empty</mdb-error>
-              </div>
-
-              <!-- E-mail -->
-              <div class="form-group position-relative">
-                <input ngModel mdbInput mdbValidate name="mail" type="email" placeholder="email@example.com" id="form8" class="form-control mb-4"  #mail="ngModel" required  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-                <mdb-icon *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="exclam" fas icon="exclamation-circle"></mdb-icon>
-                
-                <mdb-error *ngIf="mail.invalid && (mail.dirty || mail.touched)">email required</mdb-error>
-
-                <div *ngIf="mail.invalid && (mail.dirty || mail.touched)">
-                  <mdb-error *ngIf="mail.errors.required && !(mail.errors.pattern)">email required</mdb-error>
-                  <mdb-error *ngIf="mail.errors.pattern">looks like this is not an email</mdb-error>
-                </div>
-              </div>
-
-              <!-- Password -->
-              <div class="form-group position-relative">
-                <input ngModel mdbInput mdbValidate name="password" type="password" placeholder="password" id="form1" class="form-control mb-4" #password="ngModel" required>
-                <mdb-icon *ngIf="password.invalid && (password.dirty || password.touched)" class="exclam" fas icon="exclamation-circle"></mdb-icon>
-                <mdb-error *ngIf="password.invalid && (password.dirty || password.touched)">password cannot be empty</mdb-error>
-              </div>
-
-
-              <!-- Sign up button -->
-              <button mdbBtn color="success" block="true" class="my-4 rounded font-weight-bold" type="submit">claim your free trail</button>
-
-              <!-- Terms of service -->
-              <p>By clicking the button you agree to our <a href="" class="text-danger" target="_blank">terms of service</a>
-              </p>
-
-            </form>
-            <!-- Default form register -->
-            <!--/.Form-->
-          </div>
-          <!--Grid column-->
+<!-- Full Page Intro -->
+<div class="view">
+  <!-- Mask & flexbox options-->
+  <div class="danger-color pt-5 pt-lg-0 d-flex justify-content-center align-items-center">
+    <!-- Content -->
+    <div class="container">
+      <!--Grid row-->
+      <div class="row align-items-center pt-lg-5 mt-lg-5">
+        <!--Grid column-->
+        <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft"
+          data-wow-delay="0.3s">
+          <h1 class="h1-responsive font-weight-bold">learn to code by watching others</h1>
+          <p>see how experienced developerssolve problems in real-time. Watching scripted tutorials is great, but
+            understanding how developers think is invalueable</p>
         </div>
-        <!--Grid row-->
+        <!--Grid column-->
+
+
+        <!--Grid column-->
+        <div class="col-md-6 col-xl-5 mb-4">
+          <button mdbBtn block="true" class="my-4 font-weight-bold rounded" type="submit">Try it free 7 days <span
+              class="font-weight-normal text-white-50">then $20/mo
+              thereafter</span></button>
+
+              <!--Form-->
+          <!-- Default form register -->
+          <form class="rounded z-depth-1-half text-center white border border-light p-5">
+
+            <!-- First-name -->
+            <div class="form-group position-relative">
+              <input ngModel mdbInput mdbValidate name="firstname" type="text" placeholder="firstname" id="input1"
+                class="form-control mb-4" #firstname="ngModel" required>
+              <mdb-icon *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="exclam" fas
+                icon="exclamation-circle"></mdb-icon>
+              <mdb-error *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">firstname cannot be empty
+              </mdb-error>
+            </div>
+
+            <!-- Last-name -->
+            <div class="form-group position-relative">
+              <input ngModel mdbInput mdbValidate name="lastname" type="text" placeholder="lastname" id="input2"
+                class="form-control mb-4" #lastname="ngModel" required>
+              <mdb-icon *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="exclam" fas
+                icon="exclamation-circle"></mdb-icon>
+              <mdb-error *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">Lastname cannot be empty
+              </mdb-error>
+            </div>
+
+            <!-- E-mail -->
+            <div class="form-group position-relative">
+              <input ngModel mdbInput mdbValidate name="mail" type="email" placeholder="email@example.com" id="form8"
+                class="form-control mb-4" #mail="ngModel" required
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+              <mdb-icon *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="exclam" fas
+                icon="exclamation-circle"></mdb-icon>
+
+              <mdb-error *ngIf="mail.invalid && (mail.dirty || mail.touched)">email required</mdb-error>
+
+              <div *ngIf="mail.invalid && (mail.dirty || mail.touched)">
+                <mdb-error *ngIf="mail.errors.required && !(mail.errors.pattern)">email required</mdb-error>
+                <mdb-error *ngIf="mail.errors.pattern">looks like this is not an email</mdb-error>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group position-relative">
+              <input ngModel mdbInput mdbValidate name="password" type="password" placeholder="password" id="form1"
+                class="form-control mb-4" #password="ngModel" required>
+              <mdb-icon *ngIf="password.invalid && (password.dirty || password.touched)" class="exclam" fas
+                icon="exclamation-circle"></mdb-icon>
+              <mdb-error *ngIf="password.invalid && (password.dirty || password.touched)">password cannot be empty
+              </mdb-error>
+            </div>
+
+
+            <!-- Sign up button -->
+            <button mdbBtn color="success" block="true" class="my-4 rounded font-weight-bold" type="submit">claim your
+              free trail</button>
+
+            <!-- Terms of service -->
+            <p>By clicking the button you agree to our <a href="" class="text-danger" target="_blank">terms of
+                service</a>
+            </p>
+
+          </form>
+          <!-- Default form register -->
+          <!--/.Form-->
+        </div>
+        <!--Grid column-->
       </div>
-      <!-- Content -->
+      <!--Grid row-->
     </div>
-    <!-- Mask & flexbox options-->
+    <!-- Content -->
   </div>
-  <!-- Full Page Intro -->
+  <!-- Mask & flexbox options-->
+</div>
+<!-- Full Page Intro -->
