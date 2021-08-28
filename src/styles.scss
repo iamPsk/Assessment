@@ -1,3 +1,8 @@
+// @import "~ng-uikit-pro-standard/assets/scss/core/colors";
+// @import "~ng-uikit-pro-standard/assets/scss/core/variables";
+// @import "~ng-uikit-pro-standard/assets/scss/core/variables-pro";
+// @import "~ng-uikit-pro-standard/assets/scss/sections-pro/_contacts-pro.scss";
+
 /* You can add global styles to this file, and also import other style files */
 // body,
 // html,
@@ -5,6 +10,22 @@
 //   min-height: 100vh;
 // }
 
+body{
+  background-color: #fafafa;
+}
+
+.card .card-body .card-text{
+  font-weight: bold !important;
+}
+
+section > div.row > div > div > mdb-card.bg-secondary.card.rounded.text-white.z-depth-2 > mdb-card-body:nth-child(1) > mdb-card-text > p{
+  color: var(--light);
+}
+
+section > div.row > div.pill-2.col-12 > div > mdb-card.rounded.z-depth-2.bg-secondary.card > mdb-card-body:nth-child(1) > mdb-card-text > p{
+  color: var(--light);
+
+}
 @font-face {
   font-family: "Lobster-Regular";
   src: url("./assets/fonts/Lobster-Regular.ttf") format("truetype");
@@ -84,3 +105,43 @@ div > div.col-md-6.d-flex.flex-wrap.py-5 .card:hover p.card-text{
 //     height: 100vh;
 //   }
 // }
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  // font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 300;
+  color: var(--dark);
+  font-size: 5rem;
+}
+
+.carousel-control-next-icon::before
+{
+  content: '\203a';
+}
+
+.card .card-body .card-text{
+  font-size: 3rem !important;
+}
+
+.carousel-control-prev-icon::before {
+  content: "\2039";
+
+}
+.carousel-control {
+  opacity: unset !important;
+}
+
+.carousel .carousel-control-next-icon{
+  background-image: unset !important;
+}
+
+@media(max-width:767.98px) {
+  .carousel-control-prev-icon,
+.carousel-control-next-icon{
+  display: none;
+}
+}

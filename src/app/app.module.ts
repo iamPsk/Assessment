@@ -10,6 +10,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TestomonialsComponent } from './components/testomonials/testomonials.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { Task1Component } from './components/task1/task1.component';
+import { FormsModule } from '@angular/forms';
+import { Task2Component } from './components/task2/task2.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +21,13 @@ import { ContactComponent } from './components/contact/contact.component';
     FooterComponent,
     HeaderComponent,
     TestomonialsComponent,
-    ContactComponent
+    ContactComponent,
+    Task1Component,
+    Task2Component
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule

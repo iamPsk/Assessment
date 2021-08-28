@@ -1,0 +1,53 @@
+/* Required for full background image */
+// 93,84, 163
+//           255, 121, 12093,84, 163
+//           255, 121, 120
+html,
+body,
+header,
+.view {
+  // min-height: 100vh;
+}
+
+div > div > div > div > div.col-md-6.col-xl-5.mb-4 > button{
+  background-color: rgb(93,84, 163);
+  color: #fff;
+}
+
+.error-message{
+  width: 100%;
+  text-align: right;
+}
+
+input.form-control.validate-error.ng-invalid.ng-touched, input.form-control.validate-error.ng-invalid.ng-dirty, .form-submitted input.form-control.validate-error.ng-invalid {
+  border: 1px solid #f44336 !important;
+}
+
+.exclam{
+  position: absolute;
+  top: 11px;
+  right: 16px;
+  color: var(--danger);
+}
+
+div > div > div > div > div.col-md-6.col-xl-5.mb-4 > button.btn{
+  text-transform: unset;
+}
+
+.top-nav-collapse {
+  background-color: #39448c !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #39448c !important;
+  }
+}
+
+h6 {
+  line-height: 1.7;
+}

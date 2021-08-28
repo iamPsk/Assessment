@@ -41,19 +41,13 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-
+    
   }
-
+  
   ngAfterViewInit(): void {
-
     this.activateObserver()
 
-    // let x = this.counter()
-
-    // setInterval(() => {
-    //   this.nextslide(x.next().value)
-    // }, 5000)
-
+    // this.nextslide(0)
   }
 
 
@@ -126,6 +120,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   activateObserver() {
+    
+    console.log('watching for changes');
+
     let h1: HTMLElement = document.querySelector("h1.slide-heading.h1-responsive.text-light")
     let div: HTMLDivElement = document.querySelector('header > section > div > div.col-lg-10.p-0 > div')
     let h1Container: HTMLDivElement = document.querySelector(".slide-title.overflow-hidden")
@@ -133,10 +130,20 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
     let observer = new (window as any).ResizeObserver(() => {
       
+      console.log('change detected \nAccomadating chabges');
+      
       this.slideWidth = imgContainer.offsetWidth + 48
+
       this.slideTitleHeight = h1.offsetHeight + 8
 
-      h1Container.style.height = `${this.slideTitleHeight}px`
+      // console.log(this.slideTitleHeight);
+      // console.log(this.slideWidth);
+      // console.log(h1Container.style.height);
+      
+      // h1Container.style.height = `${this.slideTitleHeight}px`
+
+      console.log(h1Container.style.height);
+      
     });
 
     observer.observe(div)

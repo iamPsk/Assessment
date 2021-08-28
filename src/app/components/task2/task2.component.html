@@ -1,0 +1,152 @@
+<!--Section: Products v.2-->
+<section class="container-lg bg-grey lighten-5 text-center">
+  <!--Section heading-->
+  <h2 class="h1 font-weight-bold text-center h1 py-4">Our Pricing</h2>
+
+  <div class="d-flex justify-content-center align-items-end custom-options pb-4">
+    <p class="font-weight-bold text-black-50">Annually</p>
+    <!-- <div class="custom-control custom-switch text-center">
+      <input type="checkbox" class="custom-control-input " id="customSwitches">
+      <label class="custom-control-label" for="customSwitches" (click)="togglePill()" ></label>
+    </div> -->
+
+    <!-- Rounded switch -->
+    <label class="switch custom-switch">
+      <input type="checkbox">
+      <span class="slider round" (click)="togglePill()"></span>
+    </label>
+
+    <p class="font-weight-bold text-black-50">Monthly</p>
+  </div>
+  <div class="row">
+    <div class="pill-1 col-12" [class.d-none]="activePill == 2">
+      <div class="card-group align-items-center">
+        <mdb-card class="rounded z-depth-2">
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5 class="font-weight-bold mb-3">Basic</h5>
+            </mdb-card-title>
+            <mdb-card-text class="d-flex align-items-center justify-content-center mb-0">
+              <mdb-icon style="font-size: 14px;" fas icon="dollar-sign"></mdb-icon> 19.99
+            </mdb-card-text>
+          </mdb-card-body>
+          <ul class="list-group list-group-flush">
+            <hr>
+            <li class="list-group-item">500 GB Storage</li>
+            <li class="list-group-item">2 Users Allowed </li>
+            <li class="list-group-item">Send Up To 3 GB</li>
+          </ul>
+          <mdb-card-body class="px-0">
+            <a href="#!" class="btn btn-primary w-100 card-link">learn more</a>
+          </mdb-card-body>
+        </mdb-card>
+
+        <mdb-card class="rounded blue-gradient-rgba z-depth-2 text-white" bgColor="bg-secondary"
+          style="z-index: 1;;height: 31rem;">
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5 class="font-weight-bold mb-3">Proffesional</h5>
+            </mdb-card-title>
+            <mdb-card-text class="d-flex align-items-center justify-content-center mb-0">
+              <mdb-icon style="font-size: 14px;" fas icon="dollar-sign"></mdb-icon> 24.99
+            </mdb-card-text>
+          </mdb-card-body>
+          <ul class="list-group list-group-flush">
+            <hr>
+            <li class="list-group-item">1 TB Storage</li>
+            <li class="list-group-item">5 Users Allowed </li>
+            <li class="list-group-item">Send Up To 10 GB</li>
+          </ul>
+          <mdb-card-body class="px-0">
+            <a href="#!" class="btn btn-light w-100 card-link">learn more</a>
+          </mdb-card-body>
+        </mdb-card>
+
+        <mdb-card class="rounded z-depth-2" >
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5 class="font-weight-bold mb-3">Master</h5>
+            </mdb-card-title>
+            <mdb-card-text class="d-flex align-items-center justify-content-center mb-0"> <mdb-icon style="font-size: 14px;" fas icon="dollar-sign"></mdb-icon> 34.99</mdb-card-text>
+          </mdb-card-body>
+          <ul class="list-group list-group-flush">
+            <hr>
+            <li class="list-group-item">2 TB Storage</li>
+            <li class="list-group-item">10 Users Allowed </li>
+            <li class="list-group-item">Send Up To 20 GB</li>
+          </ul>
+          <mdb-card-body class="px-0">
+            <a href="#!" class="btn btn-primary w-100 card-link">learn more</a>
+          </mdb-card-body>
+        </mdb-card>
+
+
+      </div>
+    </div>
+
+    <div class="pill-2 col-12" [hidden]="activePill == 1">
+      <div class="card-group align-items-center">
+        <mdb-card class="rounded z-depth-2" >
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5 class="font-weight-bold mb-3">Basic</h5>
+            </mdb-card-title>
+            <mdb-card-text class="d-flex align-items-center justify-content-center mb-0"> <mdb-icon style="font-size: 14px;" fas icon="dollar-sign"></mdb-icon> 199.99</mdb-card-text>
+          </mdb-card-body>
+          <ul class="list-group list-group-flush">
+            <hr>
+            <li class="list-group-item">500 GB Storage</li>
+            <li class="list-group-item">2 Users Allowed </li>
+            <li class="list-group-item">Send Up To 3 GB</li>
+          </ul>
+          <mdb-card-body class="px-0">
+            <a href="#!" class="btn btn-primary w-100 card-link">learn more</a>
+          </mdb-card-body>
+        </mdb-card>
+
+        <mdb-card class="rounded blue-gradient-rgba text-white z-depth-2" bgColor="bg-secondary"
+          style="z-index: 1;; height: 31rem;">
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5 class="font-weight-bold mb-3">Proffesional</h5>
+            </mdb-card-title>
+            <mdb-card-text class="d-flex align-items-center justify-content-center mb-0"> <mdb-icon style="font-size: 14px;" fas icon="dollar-sign"></mdb-icon> 249.99</mdb-card-text>
+          </mdb-card-body>
+          <ul class="list-group list-group-flush">
+            <hr>
+            <li class="list-group-item">1 TB Storage</li>
+            <li class="list-group-item">5 Users Allowed </li>
+            <li class="list-group-item">Send Up To 10 GB</li>
+          </ul>
+          <mdb-card-body class="px-0">
+            <a href="#!" class="btn btn-light w-100 card-link">learn more</a>
+          </mdb-card-body>
+        </mdb-card>
+
+        <mdb-card class="rounded z-depth-2" >
+          <mdb-card-body >
+            <mdb-card-title>
+              <h5 class="font-weight-bold mb-3">Master</h5>
+            </mdb-card-title>
+            <mdb-card-text class="d-flex align-items-center justify-content-center mb-0"> <mdb-icon style="font-size: 14px;" fas icon="dollar-sign"></mdb-icon> 349.99</mdb-card-text>
+          </mdb-card-body>
+          <ul class="list-group list-group-flush">
+            <hr>
+            <li class="list-group-item">2 TB Storage</li>
+            <li class="list-group-item">10 Users Allowed </li>
+            <li class="list-group-item">Send Up To 20 GB</li>
+          </ul>
+          <mdb-card-body class="px-0">
+            <a href="#!" class="btn btn-primary w-100 card-link">learn more</a>
+          </mdb-card-body>
+        </mdb-card>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+<!--Section: Products v.2-->
